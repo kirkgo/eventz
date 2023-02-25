@@ -1,0 +1,17 @@
+Mike's age: <%= @age %>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <strong><%= event.name %></strong>
+      in <%= event.location%>: 
+      <%= price(event) %>
+    </li>
+    <p>
+      <%= truncate(event.description, length: 35, separator: ' ') %>
+    </p>
+    <p>
+      <%= day_and_time(event) %>
+    </p>
+  <% end %>
+</ul>
